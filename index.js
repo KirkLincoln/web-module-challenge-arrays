@@ -167,12 +167,12 @@ Use the filterByWord function below to do the following:
 
 function filterByWord(originalFlavors, flavor){
     const newOriginalFlavors = [...originalFlavors]
-    for(const [i, flav] of originalFlavors) {
-        console.log(`Element at ${i}: `, i);
-        flavor.includes(flav) ? newOriginalFlavors.splice(i, 1) : null 
+    let state = []
+    for(let i = 0; i < originalFlavors.length; i++) {
+        originalFlavors[i].includes(flavor) ? state = [...state, originalFlavors[i]] : null
     }
 
-    return newOriginalFlavors;
+    return state;
 }
 
 
